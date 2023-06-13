@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
+
+*, *:before, *:after{
+  box-sizing: border-box;
+  padding: 0; margin: 0;
+  font: 600 1em/1.7 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  text-decoration: none;
+
+  color: #d68336;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #121929;
+	color: #fff;
+	display: grid;
+	place-items: center;
+    
+}
+
+button{
+    margin-top: 20%;
+}
+
+
+
+    button:hover{cursor: pointer;
+        box-shadow: 0 3px 12px rgb(35, 126, 152);
+
+        
+    }
+    button {
+      background: transparent; outline: none;
+      position: relative;
+      border: 2px solid #ffffff;
+      padding: 15px 40px;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    /*button:before (attr data-hover)*/
+    button:hover:before{opacity: 1; transform: translate(0,0);}
+    button:before{
+      content: attr(data-hover);
+      position: absolute;
+      top: 1.1em; left: 0;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 800;
+      font-size: .8em;
+      opacity: 0;
+      transform: translate(-100%,0);
+      transition: all .3s ease-in-out;
+    }
+      /*button div (button text before hover)*/
+      button:hover div{opacity: 0; transform: translate(100%,0)}
+      button div{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 800;
+        font-size: .8em;
+        transition: all .3s ease-in-out;
+      }
+
+    </style>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+
+</head>
+<body>
+   
+        <button data-hover="animation..!"><div>slide txt..!</div></button>
+        
+
+  
+
+</body>
+</html>
